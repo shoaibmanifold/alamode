@@ -1192,6 +1192,7 @@ var alamode = {
                 // Optional
         title = o["title"] || queryName,
         colorRange = o["color_range"] || ["#e41a1c","#377eb8","#4daf4a","#984ea3","#ff7f00","#ffff33","#a65628","#f781bf","#999999"],
+        breadcrumbParts = o["events_per_line"] || eventColumns.length,
         htmlElement = o["html_element"] || "body";
 
     var data = alamode.getDataFromQuery(queryName);
@@ -1199,7 +1200,7 @@ var alamode = {
     var height = 600,
         width = 850,
         radius = Math.min(width, height) / 2,
-        breadcrumbWidth = (width - 30)/eventColumns.length,
+        breadcrumbWidth = (width - 30)/breadcrumbParts,
         b = { w: breadcrumbWidth, h: 20, s: 3, t: 10 };
 
     var fullEventList = [];
